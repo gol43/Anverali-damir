@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль</title>
+    <link rel="stylesheet" href='../static/index.css'>
+</head>
+<body>
+    <div class='container'>
+        {% if user_role == 'Заказчик' %}
+        <h2 class="center">Профиль заказчика</h2>
+        {% elif user_role == 'Исполнитель' %}
+        <h2 class="center">Профиль исполнителя</h2>
+        {% endif %}
+        {% if customer %}
+            <p><span class="highlight-bio">Имя:</span> {{ user.username }}</p>
+            <p><span class="highlight-bio">Роль:</span> {{ user_role }}</p>
+
+            <p><span class="highlight">Контактные данные:</span> {{ customer.bio }}</p>
+            <hr class="divider">
+            <p><span class="highlight">Опыт:</span> {{ customer.exp }}</p>
+            <a href="{% url 'edit_profile' %}">Редактировать</a>
+            <form action="{% url 'logout' %}" method="post">
+                {% csrf_token %}
+                <button type="submit">Выйти</button>
+            </form>
+        {% else %}
+            <p>Вы ещё ничего не написали о себе: <a href="{% url 'create_profile' %}">Написать информацию о себе</a></p>
+        {% endif %}
+    </div>
+</body>
+</html>

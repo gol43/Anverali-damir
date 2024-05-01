@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Создание информации о себе</title>
+    <link rel="stylesheet" href="/static/index.css">
+</head>
+<body>
+    <div class='container'>
+        <h2 class="center">Создание информации о себе</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="field-wrapper contact-data">
+                <p><span class="highlight">Контактные данные:</span></p> 
+                {{ form.bio }}
+                <span class="divider"></span>
+            </div>
+            <div class="field-wrapper experience">
+                <p><span class="highlight">Опыт:</span></p> 
+                {{ form.exp }}
+            </div>
+            
+            <button type="submit">Сохранить</button>
+        </form>   
+    </div>
+</body>
+</html>

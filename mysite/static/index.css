@@ -1,0 +1,69 @@
+body {
+    background-color: #3eb4dc;
+    font-family: Arial, sans-serif;
+    font-size: 1.3em;
+}
+
+.container {
+    width: 78%;
+    margin: 65px auto;
+    padding: 26px;
+    background-color: #f2f2f2;
+    border-radius: 13px;
+    box-shadow: 0 0 26px rgba(0, 0, 0, 0.2);
+}
+
+h2.center {
+    text-align: center;
+    font-size: 1.3em;
+}
+
+form {
+    margin-top: 26px;
+}
+
+.container p {
+    overflow-y: auto;
+    max-height: 130px;
+    font-size: 1.3em;
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid #000;
+    margin: 26px 0;
+}
+
+.highlight {
+    color: rgb(1, 195, 111);
+}
+.highlight-bio {
+    color: rgb(0, 179, 255)
+}
+
+textarea, input[type="text"] {
+    width: 100%;
+    max-width: 100%;
+    resize: none;
+    overflow-y: auto;
+    max-height: 130px;
+    font-size: 1.3em;
+}
+
+button {
+    display: block;
+    width: 100%;
+    margin-top: 13px;
+    padding: 13px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 6.5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1.3em;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
