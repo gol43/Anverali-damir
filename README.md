@@ -5,24 +5,30 @@ Anverali-damir. Вы можете зарегестрировать пользо�
 
 ### Установка:
 Клонируйте проект:
-    ```bash
+1.  ```bash
     git clone https://github.com/gol43/Anverali-damir.git
     ```
-    ```bash
+
+2.  ```bash
     cd Anverali-damir
     ```
-    ```bash
+
+3.   ```bash
     python -m venv venv
     ```
-    ```bash
+
+4.   ```bash
     . venv/Scripts/activate
     ```
-    ```bash
+
+5.   ```bash
     pip install -r requirements.txt
     ```
-    ```bash
+
+6.   ```bash
     Выполните миграции, запустите сервер.
     ```
+
 ### Логика действий:
 1. Зарегистрируйте пользователя: http://127.0.0.1:8000/register/ 
 2. Войдите: http://127.0.0.1:8000/login/
