@@ -5,28 +5,23 @@ Anverali-damir. Вы можете зарегестрировать пользо�
 
 ### Установка:
 Клонируйте проект:
-1.  ```bash
-    git clone https://github.com/gol43/Anverali-damir.git
+    ```bash
+1.    git clone https://github.com/gol43/Anverali-damir.git
     ```
-
-2.  ```bash
-    cd Anverali-damir
+    ```bash
+2.    cd Anverali-damir
     ```
-
-3.   ```bash
-    python -m venv venv
+    ```bash
+3.    python -m venv venv
     ```
-
-4.   ```bash
-    . venv/Scripts/activate
+    ```bash
+4.    . venv/Scripts/activate
     ```
-
-5.   ```bash
-    pip install -r requirements.txt
+    ```bash
+5.    pip install -r requirements.txt
     ```
-
-6.   ```bash
-    Выполните миграции, запустите сервер.
+    ```bash
+6.    Выполните миграции, запустите сервер.
     ```
 
 ### Логика действий:
