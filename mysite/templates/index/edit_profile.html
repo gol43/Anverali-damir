@@ -13,12 +13,16 @@
             {% csrf_token %}
             <div class="field-wrapper contact-data">
                 <p><span class="highlight">Контактные данные:</span></p> 
-                {{ form.bio }}
+                {{ customer_form.bio }}
                 <span class="divider"></span>
             </div>
             <div class="field-wrapper experience">
                 <p><span class="highlight">Опыт:</span></p> 
-                {{ form.exp }}
+                {{ customer_form.exp }}
+            </div>
+            <div class="field-wrapper username">
+                <p><span class="highlight">Имя пользователя:</span></p>
+                {{ user_form.username }}
             </div>
             
             <button type="submit">Сохранить</button>
@@ -28,7 +32,7 @@
     <style>
         .field-wrapper.contact-data textarea {
             height: 25px;
-            overflow-y: hidden; /* Скрываем вертикальную прокрутку */
+            overflow-y: hidden;
         }
     </style>
 </body>

@@ -6,7 +6,8 @@ class CustomUser(AbstractUser):
         ('Заказчик', 'Заказчик'),
         ('Исполнитель', 'Исполнитель'),
     )
-    role = models.CharField(max_length=15, choices=ROLE_CHOICES)
+    role = models.CharField(max_length=15, choices=ROLE_CHOICES, default='Заказчик')
+    username = models.CharField(max_length=150, unique=True, editable=True)
 
     class Meta:
         verbose_name = 'Пользователь'

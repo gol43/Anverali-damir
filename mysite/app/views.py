@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from .forms import CustomerForm
-from .models import Customer
+from .forms import *
+from .models import *
+
 
 @login_required
 def view_or_edit_profile(request):
@@ -22,6 +23,7 @@ def view_or_edit_profile(request):
     }
     return render(request, 'index/customer.html', context)
 
+
 @login_required
 def create_profile(request):
     if request.method == 'POST':
@@ -39,6 +41,9 @@ def create_profile(request):
     }
     return render(request, 'index/create_profile.html', context)
 
+from django.contrib.auth.models import User
+
+
 @login_required
 def edit_profile(request):
     try:
@@ -47,14 +52,19 @@ def edit_profile(request):
         return redirect('create_profile')
 
     if request.method == 'POST':
-        form = CustomerForm(request.POST, instance=customer)
-        if form.is_valid():
-            form.save()
+        customer_form = CustomerForm(request.POST, instance=customer)
+        user_form = CustomUserChangeForm(request.POST, instance=request.user)
+        if customer_form.is_valid() and user_form.is_valid():
+            customer_form.save()
+            user_form.save()
             return redirect('view_profile')
     else:
-        form = CustomerForm(instance=customer)
+        customer_form = CustomerForm(instance=customer)
+        user_form = CustomUserChangeForm(instance=request.user)
 
     context = {
-        'form': form,
+        'customer_form': customer_form,
+        'user_form': user_form,
     }
     return render(request, 'index/edit_profile.html', context)
+
